@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Grand Parent Component" icon-name="standard:avatar_loading">
+        <div class="slds-m-around_medium">
+            <table>
+                <th>Details sent from parent</th>
+                <tr>
+                    <td>
+                        Name : {childDetailsName}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender : {childDetailsGender}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Address : {childDetailsAddress}
+                    </td>
+                </tr>
+            </table>
+            <div class="slds-m-around_medium">
+                <lightning-button 
+                    variant="success" 
+                    label="Send Message To Child" 
+                    title="Send Message To Child" 
+                    onclick={sendMessageToChild} 
+                    class="slds-m-left_x-small">
+                </lightning-button>
+            </div>
+            <c-parent-component-event-test onsendtograndparent={handleEventFromGranChildren}></c-parent-component-event-test>
+        </div>
+    </lightning-card>
+</template>

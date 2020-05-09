@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Parent Component" icon-name="standard:avatar">
+        <div class="slds-m-around_medium">
+            <table>
+                <th>Details sent from child</th>
+                <tr>
+                    <td>
+                        Name : {childDetailsName}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender : {childDetailsGender}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Address : {childDetailsAddress}
+                    </td>
+                </tr>
+            </table>
+            <div class="isDataSent">
+                
+            </div>
+            <div class="slds-m-around_medium">
+                <c-child-component-event-test onsendmydata={handleChildEvent}></c-child-component-event-test>
+            </div>
+        </div>
+    </lightning-card>
+</template>
