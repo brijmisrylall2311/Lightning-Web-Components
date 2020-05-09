@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Simple Average Calculator" icon-name="custom:custom5" class="slds-m-top_medium">
+        <div class="slds-m-around_medium">
+          <p>Total : {myTotal} </p>
+          <p>Average : {myAverage} </p>
+          <lightning-input
+            label="Value 1"
+            type="number"
+            value={myValue1} 
+            onchange={valueChangeHandler}>
+          </lightning-input>
+          <lightning-input 
+            label="Value 2"
+            type="number"
+            value={myValue2} 
+            onchange={valueChangeHandler}>
+          </lightning-input>
+          <div class="container" lwc:dom="manual">
+          </div>
+        </div>
+      </lightning-card>
+</template>
