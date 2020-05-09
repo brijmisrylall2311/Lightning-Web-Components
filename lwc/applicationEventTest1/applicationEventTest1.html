@@ -1,0 +1,90 @@
+<template>
+    <lightning-card title="Apex Callout Example" icon-name="custom:custom15">
+        <div class="slds-m-around_medium">
+            <table>
+                <th>
+                    Details
+                </th>
+                <tr>
+                    <td>
+                        Name : {name}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender : {gender}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Address : {address}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <div class="slds-m-around_medium">
+                    <lightning-button 
+                        variant="brand" 
+                        label="Generate 1 random value" 
+                        title="Generate 1 random value" 
+                        onclick={callMyApexClass} 
+                        class="slds-m-left_x-small">
+                    </lightning-button>
+                </div>
+            </div>
+            <div class="slds-col">
+                <div class="slds-m-around_medium">
+                    <lightning-button 
+                        variant="brand" 
+                        label="Add to table" 
+                        title="Add to table" 
+                        onclick={addToTable}
+                        disabled={disactivateAddToTable} 
+                        class="slds-m-left_x-small">
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-m-around_medium">
+            <div class="slds-m-around_medium">
+                <lightning-input
+                    label="Number of random records to generate"
+                    type="number"
+                    value={numberOfRecords}
+                    onchange={setNumberRecords}>
+                </lightning-input>
+            </div>
+            <div class="slds-m-around_medium">
+                <lightning-button 
+                    variant="brand" 
+                    label="Generate table of random values" 
+                    title="Generate table of random values" 
+                    onclick={generateTable} 
+                    class="slds-m-left_x-small">
+                </lightning-button>
+            </div>
+        </div>
+        <div if:false={isLoaded} class="slds-is-relative">
+            <lightning-spinner
+                alternative-text="Loading..." variant="brand">
+            </lightning-spinner>
+        </div>
+        <div class="slds-m-around_medium">
+            <b>Number of records displayed : {numberOfRecordDisplay}</b>
+        </div>
+        <div class="slds-m-around_medium">
+            <template for:each={aJsonStructureList} for:item="info">
+                <c-application-event-test2
+                    key={info.myId}
+                    identifier={info.myId}
+                    name={info.myName}
+                    address={info.myAddress}
+                    gender={info.myGender}
+                    ondetaildelete={deleteFromList}>
+                </c-application-event-test2>
+            </template>
+        </div>
+    </lightning-card>
+</template>

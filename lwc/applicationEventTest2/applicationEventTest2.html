@@ -1,0 +1,34 @@
+<template>
+    <div class="slds-m-top_x-small">
+
+    </div>
+    <div class={divColor}>
+        <div class="slds-p-around_x-small slds-box">
+            <table>
+                <tr>
+                    <td>
+                        <b>Name : </b>{name}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Gender : </b>{gender}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Address : </b>{address}
+                    </td>
+                </tr>
+            </table>
+            <div class="slds-m-top_x-small">
+                <lightning-button-icon 
+                    icon-name="action:delete" 
+                    alternative-text="Delete" 
+                    title="Delete"
+                    onclick={deleteData}>
+                </lightning-button-icon>
+            </div>
+        </div>
+    </div>
+</template>
