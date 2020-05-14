@@ -12,10 +12,12 @@ export default class ApplicationEventTest1 extends LightningElement {
     @api numberOfRecords;
     @api isLoaded = false;
     @api disactivateAddToTable = false;
+    @api disableGenerateTableButton = false;
 
     connectedCallback(){ 
         this.isLoaded = true;
         this.disactivateAddToTable = true;
+        this.disableGenerateTableButton = true;
     }
     
     callMyApexClass(){
@@ -42,14 +44,25 @@ export default class ApplicationEventTest1 extends LightningElement {
     }
 
     setNumberRecords(event){
-        this.numberOfRecords = event.target.value;
+        var numToDis = event.target.value;
+        if(numToDis != null 
+            && numToDis != 0){
+            this.numberOfRecords = event.target.value;
+            this.disableGenerateTableButton = false;
+        }
+        else{
+            this.disableGenerateTableButton = true;
+        }
+
     }
 
     generateTable(){
         console.log("generateTable 1");
         console.log("generateTable numberOfRecords >>>>  " + this.numberOfRecords);
-        this.isLoaded = false;
-        if(this.numberOfRecords != null){
+        if(this.numberOfRecords != null 
+            && this.numberOfRecords != 0){
+            console.log("BM inside IF");
+            this.isLoaded = false;
             getJSONStructureList({
                 numberOfPersonToCreate: this.numberOfRecords
             })

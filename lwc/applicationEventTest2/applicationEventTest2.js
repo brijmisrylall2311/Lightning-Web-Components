@@ -12,14 +12,14 @@ export default class ApplicationEventTest2 extends LightningElement {
     }
 
     setGenderColor(){
-        console.log("setGenderColor 1");
+        //console.log("setGenderColor 1");
         if(this.gender == "Male"){
             this.divColor = "maleColor";
         }
         else{
             this.divColor = "femaleColor";
         }
-        console.log("setGenderColor 2");
+        //console.log("setGenderColor 2");
     }
 
     deleteData(){
