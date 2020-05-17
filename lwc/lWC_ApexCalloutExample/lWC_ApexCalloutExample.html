@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Apex Callout Example" icon-name="custom:custom15">
+        <div class="slds-m-around_medium">
+            <div if:false={isLoaded} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+            <div class="slds-m-around_medium slds-align_absolute-center">
+                <lightning-button 
+                    variant="brand" 
+                    label="Query my cars" 
+                    title="Query my cars"
+                    onclick={makeAnApexCall} 
+                    class="slds-m-left_x-small">
+                </lightning-button>
+            </div>
+            <div class="slds-m-around_medium">
+                <table>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Model
+                        </th>
+                        <th>
+                            Colour
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                    </tr>
+                    <template for:each={aCarList} for:item="aCar">
+                        <tr key={aCar.Id}>
+                            <td>
+                                {aCar.Name}
+                            </td>
+                            <td>
+                                {aCar.Model__c}
+                            </td>
+                            <td>
+                                {aCar.Colour__c}
+                            </td>
+                            <td>
+                                {aCar.Price__c}
+                            </td>
+                        </tr>
+                    </template>
+                </table>
+            </div>
+        </div>
+    </lightning-card>
+</template>
