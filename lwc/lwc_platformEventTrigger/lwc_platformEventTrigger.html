@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Creating Platform Event" icon-name="action:lead_convert">
+        <div class="slds-m-around_medium">
+            <div if:false={isLoaded} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+            <div class="slds-m-around_medium slds-align_absolute-center">
+                <lightning-button 
+                    variant="brand" 
+                    label="Create platform event" 
+                    title="Create platform event"
+                    onclick={createPlatformEvent} 
+                    class="slds-m-left_x-small">
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

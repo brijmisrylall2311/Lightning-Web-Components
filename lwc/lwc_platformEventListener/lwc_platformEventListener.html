@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Listening to Platform Event" icon-name="action:user">
+        <template for:each={payloadList} for:item="aReponse">
+            <div class="slds-m-around_medium slds-align_absolute-center" key={aReponse.id}>
+                <b>>>>> Platform event captured !!</b>
+            </div>
+        </template>
+    </lightning-card>
+</template>
