@@ -1,0 +1,22 @@
+<aura:component access="GLOBAL" 
+                implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes"
+                controller="AP_LightningComponentExampleClass">
+
+    <!-- attributes START -->
+    <aura:attribute name="messageToSend" type="String" default="Hello !"/>
+    <!-- attribute END -->
+
+    <lightning:card title="Lightning Component"
+                    iconName="utility:connected_apps">
+        <div class="slds-m-around_medium">
+            <lightning:input 
+                type="String" 
+                name="input1" 
+                label="Message to send to Lightning Web Component" 
+                value="{!v.messageToSend}"/>
+        </div>
+        <div class="slds-m-around_large">
+            <c:lwc_lcChildComponent messageFromLC="{!v.messageToSend}"/>
+        </div>
+    </lightning:card>
+</aura:component>	
