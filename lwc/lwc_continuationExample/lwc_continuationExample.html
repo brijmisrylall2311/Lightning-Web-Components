@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Continuation callout example" icon-name="custom:custom15">
+        <div class="slds-m-around_medium">
+            <div if:false={isLoaded} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+            <div class="slds-m-around_medium slds-align_absolute-center">
+                <lightning-button 
+                    variant="brand" 
+                    label="Make webservice callout" 
+                    title="Make webservice callout" 
+                    onclick={makeCallout} 
+                    class="slds-m-left_x-small"
+                    disabled={disableButton}>
+                </lightning-button>
+            </div>
+            <div class="slds-m-around_medium">
+                <template if:true={showResponse1}>
+                    <b>Response 1 : </b> {myResponse.Continuation1}
+                </template>
+            </div>
+            <div class="slds-m-around_medium">
+                <template if:true={showResponse2}>
+                    <b>Response 2 : </b> {myResponse.Continuation2}
+                </template>
+            </div>
+            <div class="slds-m-around_medium">
+                <template if:true={showResponse3}>
+                    <b>Response 3 : </b> {myResponse.Continuation3}
+                </template>
+            </div>
+        </div>
+    </lightning-card>    
+</template>
