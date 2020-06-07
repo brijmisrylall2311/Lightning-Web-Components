@@ -15,6 +15,7 @@ export default class ContinuationTest extends LightningElement {
     }
     
     makeCallout(){
+        console.log("make callout 1");
         this.isLoaded = false;
         startRequest()
             .then(result => {
@@ -35,8 +36,9 @@ export default class ContinuationTest extends LightningElement {
             })
             .catch(error => {
                 console.log("error call");
-                console.log("error >> " + JSON.parse(this.error));
+                console.log("error >> " + this.error);
             });
+            console.log("make callout 2");
     }
 
 }
