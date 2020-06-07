@@ -1,8 +1,3 @@
-/*
-* author : Brij Misrylall
-* description : class to make continuation callout
-* date : 01/05/2020
-*/
 public with sharing class AP_Continuation {
 
     public AP_Continuation() {
